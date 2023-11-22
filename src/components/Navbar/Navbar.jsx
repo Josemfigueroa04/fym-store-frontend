@@ -8,7 +8,7 @@ function Navbar() {
             <ul className="flex gap-3 items-center">
                 <li>
                     <NavLink to="/">
-                        <img src="../../../public/img/logo-fym.png" alt="logo" 
+                        <img src="/img/logo-fym.png" alt="logo" 
                         className="w-20 h-20"/>
                     </NavLink>
                 </li>
