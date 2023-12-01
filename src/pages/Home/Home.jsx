@@ -1,5 +1,6 @@
 import Card from "../../components/Card/Card.jsx";
 import { useState, useEffect } from "react";
+import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
 import axios from "axios";
 
 function Home () {
@@ -23,7 +24,7 @@ function Home () {
     
     <div>
 
-        <h1>Home</h1>
+        
         <div className="grid grid-cols-4 gap-5 w-full max-w-screen-lg">
 
         { items?.map((item) => (
@@ -32,8 +33,10 @@ function Home () {
             data={item}
             />
         ))}
+        <ProductDetail />
         </div>
         
+       
     </div>
 
     
