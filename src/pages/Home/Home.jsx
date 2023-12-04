@@ -2,8 +2,9 @@ import Card from "../../components/Card/Card.jsx";
 import { useState, useEffect } from "react";
 import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
 import axios from "axios";
+import CheckoutSideMenu from "../../components/CheckoutSideMenu/CheckoutSideMenu.jsx";
 
-function Home () {
+function Home() {
     const [items, setItems] = useState(null);
 
     useEffect(() => {
@@ -16,32 +17,29 @@ function Home () {
                 console.error(error);
             }
         };
-    
+
         fetchData();
     }, [])
 
-  return (
-    
-    <div>
+    return (
 
-        
-        <div className="grid grid-cols-4 gap-5 w-full max-w-screen-lg">
+        <div>
 
-        { items?.map((item) => (
-            <Card
-            key={item.id}
-            data={item}
-            />
-        ))}
-        <ProductDetail />
+
+            <div className="grid grid-cols-4 gap-5 w-full max-w-screen-lg">
+
+                {items?.map((item) => (
+                    <Card
+                        key={item.id}
+                        data={item}
+                    />
+                ))}
+                <ProductDetail />
+                
+            </div>
         </div>
-        
-       
-    </div>
 
-    
-    
-  )
+    )
 }
 
 export default Home;
