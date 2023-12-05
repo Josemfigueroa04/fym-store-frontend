@@ -17,6 +17,7 @@ export const ShoppingCartProvider = ({ children }) => {
     const openCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(true);
     const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false);
 
+
     return (
         <ShoppingCartContext.Provider value={
             {
