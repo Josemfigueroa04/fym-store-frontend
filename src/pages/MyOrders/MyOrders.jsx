@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 
 function MyOrders() {
     const context = useContext(ShoppingCartContext);
+    
+
 
     return (
         <div>
-            <div className='flex items-center justify-center relative w-80'>
+            <div className='flex items-center justify-center relative w-80 mb-7'>
                 <h1>My Orders</h1>
             </div>
             

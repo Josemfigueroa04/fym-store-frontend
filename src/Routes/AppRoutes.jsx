@@ -14,6 +14,12 @@ function AppRoutes() {
         <div>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/clothes" element={<Home />} />
+                <Route path="/electronics" element={<Home />} />
+                <Route path="/furniture" element={<Home />} />
+                <Route path="/toys" element={<Home />} />
+                <Route path="/others" element={<Home />} />
+                
                 <Route path="/my-account" element={<MyAccount />} />
                 <Route path="/my-order" element={<MyOrder />} />
                 <Route path="/my-orders" element={<MyOrders />} />

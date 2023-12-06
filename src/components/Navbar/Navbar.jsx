@@ -12,38 +12,51 @@ function Navbar() {
         <nav className="flex justify-between items-center fixed z-10 top-0 py-5 px-8 text-sm font-light w-full" >
             <ul className="flex gap-3 items-center">
                 <li>
-                    <NavLink to="/">
+                    <NavLink to="/"
+                    onClick={() => context.setSearchByCategory()}>
                         <img src="/img/logo-fym.png" alt="logo" 
                         className="w-20 h-20"/>
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/" 
+                    onClick={() => context.setSearchByCategory()}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         All
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/clothes" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/clothes" 
+                    onClick={() => context.setSearchByCategory('clothes')}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Clothes
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/electronics" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/electronics"
+                    onClick={() => context.setSearchByCategory('electronics')}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Electronics
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/furniture" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/furniture" 
+                    onClick={() => context.setSearchByCategory('furnitures')}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Furniture
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/toys" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/toys" 
+                    onClick={() => context.setSearchByCategory('toys')}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Toys
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/others" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    <NavLink to="/others" 
+                    onClick={() => context.setSearchByCategory('others')}
+                    className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Others
                     </NavLink>
                 </li>
@@ -68,7 +81,7 @@ function Navbar() {
                 </li>
                 <li className="flex items-center">
                     <ShoppingBagIcon className='h-6 w-6 text-black'></ShoppingBagIcon> 
-                    <div>{context.count}</div>
+                    <div>{context.cartProducts.length}</div>
                 </li>
             </ul>
         </nav>
