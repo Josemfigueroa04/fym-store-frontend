@@ -1,9 +1,9 @@
 import Card from "../../components/Card/Card.jsx";
 import { useState, useEffect } from "react";
 import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
-
 import { ShoppingCartContext } from "../../context/Context";
 import { useContext } from "react";
+
 
 function Home() {
   const context = useContext(ShoppingCartContext);
@@ -27,6 +27,7 @@ function Home() {
   return (
 
     <div>
+     
       <ProductDetail />
       <div className=" flex flex-col items-center">
         <div className='flex items-center justify-center relative w-80 mb-4'>

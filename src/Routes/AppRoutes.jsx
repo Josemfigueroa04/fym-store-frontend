@@ -6,6 +6,7 @@ import MyOrder from '../pages/MyOrder/MyOrder.jsx';
 import MyOrders from '../pages/MyOrders/MyOrders.jsx';
 import NotFound from '../pages/NotFound/NotFound.jsx';
 import SignIn from '../pages/SignIn/SignIn';
+import Landing from '../pages/Landing/Landing.jsx';
 
 
 
@@ -13,6 +14,7 @@ function AppRoutes() {
     return (
         <div>
             <Routes>
+                <Route path="/landing" element={<Landing />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/clothes" element={<Home />} />
                 <Route path="/electronics" element={<Home />} />

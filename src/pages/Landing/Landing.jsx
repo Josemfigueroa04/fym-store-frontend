@@ -1,8 +1,9 @@
+import SliderImagenes from "../../components/SliderImagenes/SliderImagenes.jsx";
 
 const Landing = () => {
     return (
-        <div className="Landing">
-        <h1>Landing</h1>
+        <div className="">
+        <SliderImagenes/>
         </div>
     );
     }
