@@ -27,14 +27,14 @@ function Navbar() {
                 </li>
                 <li>
                     <NavLink to="/clothes" 
-                    onClick={() => context.setSearchByCategory('clothes')}
+                    onClick={() => context.setSearchByCategory('test')}
                     className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Clothes
                     </NavLink>
                 </li>
                 <li>
                     <NavLink to="/electronics"
-                    onClick={() => context.setSearchByCategory('electronics')}
+                    onClick={() => context.setSearchByCategory('escritorio')}
                     className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Electronics
                     </NavLink>

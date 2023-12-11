@@ -38,7 +38,7 @@ const CheckoutSideMenu = () => {
                     <OrderCard
                         key={product.id}
                         id={product.id}
-                        imageUrl={product.images[0]}
+                        imageUrl={product.images}
                         title={product.title}
                         price={product.price}
                         handleDelete={handleDelete}

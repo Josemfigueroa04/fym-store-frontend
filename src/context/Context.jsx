@@ -26,7 +26,7 @@ export const ShoppingCartProvider = ({ children }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://api.escuelajs.co/api/v1/products');
+                const response = await axios.get('http://localhost:5000/productos');
                 const json = response.data;
                 setItems(json);
             } catch (error) {
@@ -51,7 +51,7 @@ export const ShoppingCartProvider = ({ children }) => {
 
 
     const filteredItemsByCategory = (items, searchByCategory) => {
-        return items?.filter(item => item.category.name.toLowerCase().includes(searchByCategory.toLowerCase()))
+        return items?.filter(item => item.category.toLowerCase().includes(searchByCategory.toLowerCase()))
     }
 
     const filterBy = (searchType, items, searchByTitle, searchByCategory) => {
