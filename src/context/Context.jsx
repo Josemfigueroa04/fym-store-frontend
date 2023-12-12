@@ -79,6 +79,16 @@ export const ShoppingCartProvider = ({ children }) => {
         if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null, items, searchByTitle, searchByCategory))
     }, [items, searchByTitle, searchByCategory])
 
+    const [user, setUser] = useState(null);
+
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    const setAuth = (boolean) => {
+        setIsAuthenticated(boolean);
+    }
+    
+    
+
 
     return (
         <ShoppingCartContext.Provider value={
@@ -103,8 +113,10 @@ export const ShoppingCartProvider = ({ children }) => {
                 setSearchByTitle,
                 filteredItems,
                 searchByCategory,
-                setSearchByCategory
-
+                setSearchByCategory,
+                isAuthenticated,
+                setIsAuthenticated,
+                setAuth
 
             }
         }>
