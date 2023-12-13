@@ -58,8 +58,6 @@ const RegistroSencillo = () => {
         context.getProfile();
         context.checkAuthenticated();
 
-
-
       } else {
         context.setAuth(false);
         toast.error(parseRes);
@@ -76,7 +74,7 @@ const RegistroSencillo = () => {
       <div className="h-full flex  justify-center border">
         <div className="bg-white max-w-md w-full p-10 rounded-md ">
 
-          <h1 className="mt-5 text-center">Register</h1>
+          <h1 className="mt-5 text-center">Registro de Usuario</h1>
           <form onSubmit={onSubmitForm} className="flex flex-col">
             <div className="flex items-center gap-3">
               <label htmlFor="email" className="text-base leading-7 text-blueGray-500 ">Email:</label>
@@ -91,7 +89,7 @@ const RegistroSencillo = () => {
             </div>
 
             <div className="flex items-center gap-3">
-              <label htmlFor="password" className="text-base leading-7 text-blueGray-500">Password:</label>
+              <label htmlFor="password" className="text-base leading-7 text-blueGray-500">Contraseña:</label>
               <input
                 type="password"
                 name="password"
@@ -103,7 +101,7 @@ const RegistroSencillo = () => {
             </div>
 
             <div className="flex items-center gap-3">
-              <label htmlFor="name" className="text-base leading-7 text-blueGray-500">Name:</label>
+              <label htmlFor="name" className="text-base leading-7 text-blueGray-500">Nombre:</label>
               <input
                 type="text"
                 name="name"
@@ -128,7 +126,7 @@ const RegistroSencillo = () => {
             </div>
 
             <button type="submit" className="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
-          </form>
+          </form> 
 
 
         </div>

@@ -1,7 +1,10 @@
+import Login from "../../components/Login/Login.jsx";
+
+
 function SignIn (){
     return (
         <div>
-            <h1>SignIn</h1>
+            <Login/>
         </div>
     )
 }

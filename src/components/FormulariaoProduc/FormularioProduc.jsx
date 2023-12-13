@@ -3,9 +3,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useContext } from 'react';
-import { ProductContext } from '../../context/ContextProducto.jsx';
-
-
+import { ProductContext } from '../../context/ContextProducto';
 
 const FormularioProduc = () => {
     const context = useContext(ProductContext);
@@ -36,19 +34,15 @@ const FormularioProduc = () => {
         }
 
         try {
-
             context.addProduct(productos);
+            
             toast.success("Register Successfully");
             navigate('/');
-
         }
         catch (err) {
             console.error(err.message);
             toast.error(err.message);
-
         }
-
-
 
     };
 
@@ -58,7 +52,7 @@ const FormularioProduc = () => {
             <div className="h-full flex  justify-center border">
                 <div className="bg-white max-w-md w-full p-10 rounded-md ">
 
-                    <h1 className="mt-5 text-center">Register</h1>
+                    <h1 className="mt-5 text-center">Creacion de Productos</h1>
                     <form onSubmit={onSubmitForm} className="flex flex-col">
                         <div className="flex items-center gap-3">
                             <label htmlFor="title" className="text-base leading-7 text-blueGray-500 ">Titulo:</label>
@@ -101,8 +95,8 @@ const FormularioProduc = () => {
                             <label htmlFor="category" className="text-base leading-7 text-blueGray-500">Categoria:</label>
                             <input
                                 type="text"
-                                name="Category"
-                                value={Category}
+                                name="category"
+                                value={category}
                                 placeholder="   Categoria"
                                 onChange={e => onChange(e)}
                                 className="form-control my-3 border rounded-md"

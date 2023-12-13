@@ -1,15 +1,14 @@
-import {  useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../../context/Context';
-
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
 
-    const context = useContext(ShoppingCartContext);
-    const navigate = useNavigate();
+  const context = useContext(ShoppingCartContext);
+  const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -52,34 +51,46 @@ const Login = () => {
     } catch (err) {
       console.error(err.message);
       toast.error(err.message);
-      
+
     }
   };
 
   return (
     <div>
-        <ToastContainer />
-      <h1 className="mt-5 text-center">Login</h1>
-      <form onSubmit={onSubmitForm}>
-        <input
-          type="text"
-          name="email"
-          value={email}
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={e => onChange(e)}
-          className="form-control my-3"
-        />
-        <button className="btn btn-success btn-block">Submit</button>
-      </form>
-      <Link to="/register">register</Link>
+      <ToastContainer />
+      <div className="h-full flex justify-center border">
+        <div className="bg-white max-w-md w-full p-10 rounded-md ">
+        <h1 className="mt-5 text-center">Login</h1>
+        <form onSubmit={onSubmitForm} className="flex flex-col">
+          <div className="flex items-center gap-3">
+            <label htmlFor="email" className="text-base leading-7 text-blueGray-500 ">Email:</label>
+            <input
+              type="text"
+              name="email"
+              value={email}
+              onChange={e => onChange(e)}
+              className="form-control my-3 border rounded-md"
+            />
+          </div>
+          <div className="flex items-center gap-3">
+            <label htmlFor="email" className="text-base leading-7 text-blueGray-500 ">Contraseña:</label>
+            <input
+              type="password"
+              name="password"
+              value={password}
+              onChange={e => onChange(e)}
+              className="form-control my-3 border rounded-md"
+            />
+          </div>
+
+          <button type="submit" className="bg-blue-400 text-white px-4 py-2 gap-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
+        </form>
+        <Link className="text-color-blue" to="/register">Registrarse</Link>
+      </div>
     </div>
-    
+    </div>
+
+
   );
 };
 

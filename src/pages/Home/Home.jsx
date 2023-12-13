@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
 import { ShoppingCartContext } from "../../context/Context";
 import { useContext } from "react";
-import Register from "../../components/Register/Register.jsx";
-import Login from "../../components/Login/Login.jsx";
+
+
 
 
 function Home() {
@@ -29,10 +29,7 @@ function Home() {
   return (
 
     <div>
-      <Login />
-      <Register />
-
-     
+    
       <ProductDetail />
       <div className=" flex flex-col items-center">
         <div className='flex items-center justify-center relative w-80 mb-4'>

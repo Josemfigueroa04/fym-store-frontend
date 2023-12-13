@@ -29,7 +29,7 @@ function Navbar() {
                     <NavLink to="/clothes" 
                     onClick={() => context.setSearchByCategory('test')}
                     className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Clothes
+                        Escritorios
                     </NavLink>
                 </li>
                 <li>
@@ -65,17 +65,19 @@ function Navbar() {
             <ul className="flex gap-3 items-center">
                 <li>
                     <NavLink to="/my-orders" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        My Orders
+                        Mis Ordenes
                     </NavLink>
                 </li>
-                <li>
-                    <NavLink to="/my-account" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        My Account
-                    </NavLink>
-                </li>
+                
                 <li>
                     <NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}>
-                        Sign In
+                        Iniciar Sesion
+                    </NavLink>
+
+                </li>
+                <li>
+                    <NavLink to="/register" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                        Registrarse
                     </NavLink>
 
                 </li>
