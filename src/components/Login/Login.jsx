@@ -1,5 +1,5 @@
-import React, {  useState } from "react";
-import { Link } from "react-router-dom";
+import {  useState } from "react";
+import { Link,useNavigate } from "react-router-dom";
 import { useContext } from 'react';
 import { ShoppingCartContext } from '../../context/Context';
 
@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
 
     const context = useContext(ShoppingCartContext);
+    const navigate = useNavigate();
 
   const [inputs, setInputs] = useState({
     email: "",
@@ -41,6 +42,9 @@ const Login = () => {
         localStorage.setItem("token", parseRes.token);
         context.setAuth(true);
         toast.success("Logged in Successfully");
+        navigate('/');
+        context.getProfile();
+        context.checkAuthenticated();
       } else {
         context.setAuth(false);
         toast.error(parseRes);
@@ -48,6 +52,7 @@ const Login = () => {
     } catch (err) {
       console.error(err.message);
       toast.error(err.message);
+      
     }
   };
 
@@ -70,7 +75,7 @@ const Login = () => {
           onChange={e => onChange(e)}
           className="form-control my-3"
         />
-        <button class="btn btn-success btn-block">Submit</button>
+        <button className="btn btn-success btn-block">Submit</button>
       </form>
       <Link to="/register">register</Link>
     </div>

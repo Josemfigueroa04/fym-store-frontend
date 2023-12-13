@@ -79,17 +79,64 @@ export const ShoppingCartProvider = ({ children }) => {
         if (!searchByTitle && !searchByCategory) setFilteredItems(filterBy(null, items, searchByTitle, searchByCategory))
     }, [items, searchByTitle, searchByCategory])
 
-    const [user, setUser] = useState(null);
-
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const setAuth = (boolean) => {
         setIsAuthenticated(boolean);
     }
-    
-    
 
+    const checkAuthenticated = async () => {
+        try {
+          const res = await fetch("http://localhost:5000/auth/is-verify", {
+            method: "GET",
+            headers: {token: localStorage.token }
+          });
+    
+          const parseRes = await res.json();
+    
+          parseRes === true ? setIsAuthenticated(true) : setIsAuthenticated(false);
+        } catch (err) {
+          console.error(err.message);
+        }
+      };
+    
+    //   useEffect(() => {
+    //     checkAuthenticated();
+    //   }, []);
 
+      const [user, setUser] = useState("");
+
+  const getProfile = async () => {
+    try {
+      const res = await fetch("http://localhost:5000/dashboard/", {
+        method: "Get",
+        headers: { token: localStorage.token }
+      });
+
+      const parseData = await res.json();
+      setUser(parseData);
+      console.log(parseData);
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+  const logout = async e => {
+    e.preventDefault();
+    try {
+      localStorage.removeItem("token");
+      setAuth(false);
+      toast.success("Logout successfully");
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
+//   useEffect(() => {
+//     getProfile();
+//   }, []);
+
+    
     return (
         <ShoppingCartContext.Provider value={
             {
@@ -116,7 +163,12 @@ export const ShoppingCartProvider = ({ children }) => {
                 setSearchByCategory,
                 isAuthenticated,
                 setIsAuthenticated,
-                setAuth
+                setAuth,
+                checkAuthenticated,
+                getProfile,
+                logout,
+                user,
+                
 
             }
         }>

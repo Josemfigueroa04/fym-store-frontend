@@ -79,6 +79,11 @@ function Navbar() {
                     </NavLink>
 
                 </li>
+                {context.user?.role && <li>
+                    <NavLink to="/admin" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                        Admin
+                    </NavLink>
+                </li>}
                 <li className="flex items-center">
                     <ShoppingBagIcon className='h-6 w-6 text-black'></ShoppingBagIcon> 
                     <div>{context.cartProducts.length}</div>
