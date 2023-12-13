@@ -11,6 +11,7 @@ import { useContext } from 'react';
 import { ShoppingCartContext } from '../context/Context.jsx';
 import Admin from '../pages/Admin/Admin.jsx';
 import Register from '../pages/Register/Register.jsx';
+import Edit from '../pages/Edit/Edit.jsx';
 
 
 function ProtectedRoute({ element }) {
@@ -50,6 +51,7 @@ function AppRoutes() {
                 <Route path="/sign-in" element={<SignIn />} />
                 <Route path="/register" element={< Register />} />
                 <Route path="/admin" element={<ProtectedRoute element={<Admin />} />} />
+                <Route path='/edit/:id' element={<ProtectedRoute element={<Edit />} />} />
 
             </Routes>
         </div>
