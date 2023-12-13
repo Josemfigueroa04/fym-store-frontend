@@ -83,7 +83,7 @@ const Login = () => {
             />
           </div>
 
-          <button type="submit" className="bg-blue-400 text-white px-4 py-2 gap-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
+          <button type="submit" className="bg-blue-400 text-white px-4 py-2 gap-3 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Iniciar Sesion</button>
         </form>
         <Link className="text-color-blue" to="/register">Registrarse</Link>
       </div>

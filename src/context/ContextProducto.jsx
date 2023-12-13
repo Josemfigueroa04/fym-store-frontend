@@ -19,6 +19,7 @@ export const ProductProvider = ({children}) => {
         const addProduct = async (product) => {
             const res = await axios.post("http://localhost:5000/productos", product);
             setProducts([...products, res.data]);
+            setItems([...items, res.data]);
         };
 
         const deleteProduct = async (id) => {

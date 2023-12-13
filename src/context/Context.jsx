@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { set } from "react-hook-form";
 
 export const ShoppingCartContext = createContext();
 
@@ -136,6 +137,38 @@ export const ShoppingCartProvider = ({ children }) => {
 //     getProfile();
 //   }, []);
 
+const [products, setProducts] = useState([]);
+
+    const getProducts = async () => {
+        const res = await axios.get("http://localhost:5000/productos");
+        setProducts(res.data);
+        setItems(res.data);
+      };
+
+      const getProduct = async (id) => {
+        const res = await axios.get(`http://localhost:5000/productos/${id}`);
+        return res.data;
+      };
+
+        const addProduct = async (product) => {
+            const res = await axios.post("http://localhost:5000/productos", product);
+            setProducts([...products, res.data]);
+            setItems([...items, res.data]);
+        };
+
+        const deleteProduct = async (id) => {
+            const res = await axios.delete(`http://localhost:5000/productos/${id}`);
+            setProducts(products.filter((product) => product.id !== id));
+            setItems(items.filter((product) => product.id !== id));
+       
+        };
+
+        const updateProduct = async (product) => {
+            const res = await axios.put(`http://localhost:5000/productos/${product.id}`, product);
+            setProducts(products.map((product) => (product.id === res.data.id ? res.data : product)));
+            setItems([...items, res.data])
+        }
+
     
     return (
         <ShoppingCartContext.Provider value={
@@ -168,6 +201,13 @@ export const ShoppingCartProvider = ({ children }) => {
                 getProfile,
                 logout,
                 user,
+                getProducts,
+                getProduct,
+                addProduct,
+                deleteProduct,
+                updateProduct,
+                products,
+                setProducts,
                 
 
             }

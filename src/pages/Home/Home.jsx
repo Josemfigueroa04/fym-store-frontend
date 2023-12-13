@@ -4,9 +4,6 @@ import ProductDetail from "../../components/ProductDetail/ProductDetail.jsx";
 import { ShoppingCartContext } from "../../context/Context";
 import { useContext } from "react";
 
-
-
-
 function Home() {
   const context = useContext(ShoppingCartContext);
 
@@ -30,11 +27,13 @@ function Home() {
 
     <div>
     
-      <ProductDetail />
+      
       <div className=" flex flex-col items-center">
+        
         <div className='flex items-center justify-center relative w-80 mb-4'>
           <h1 className='font-medium text-xl'>Nombre del Producto</h1>
         </div>
+        <ProductDetail/>
         <input
           type="text"
           placeholder='Search a product'

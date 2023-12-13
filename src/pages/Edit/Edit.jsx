@@ -7,3 +7,5 @@ return (
 </div>
 )
 }
+
+export default Edit;

@@ -3,12 +3,10 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
 import { useContext } from 'react';
-import { ProductContext } from '../../context/ContextProducto';
+import { ShoppingCartContext } from "../../context/Context";
 
 const FormularioProduc = () => {
-    const context = useContext(ProductContext);
-
-
+    const context = useContext(ShoppingCartContext);
     const navigate = useNavigate();
 
     const [productos, setProductos] = useState({
@@ -27,6 +25,16 @@ const FormularioProduc = () => {
 
     const onSubmitForm = async e => {
         e.preventDefault();
+        const reset = () => {
+            setProductos({
+                title: "",
+                price: 0,
+                description: "",
+                category: "",
+                images: "",
+                quantity: 0,
+            });
+        };
 
         if (!title || !price || !description || !category || !images || !quantity) {
             toast.error("Por favor, completa todos los campos requeridos");
@@ -35,9 +43,10 @@ const FormularioProduc = () => {
 
         try {
             context.addProduct(productos);
-            
             toast.success("Register Successfully");
-            navigate('/');
+            
+            reset();
+
         }
         catch (err) {
             console.error(err.message);
@@ -49,9 +58,8 @@ const FormularioProduc = () => {
     return (
         <div>
             <ToastContainer />
-            <div className="h-full flex  justify-center border">
+            <div className="h-full flex  justify-center border rounded-lg">
                 <div className="bg-white max-w-md w-full p-10 rounded-md ">
-
                     <h1 className="mt-5 text-center">Creacion de Productos</h1>
                     <form onSubmit={onSubmitForm} className="flex flex-col">
                         <div className="flex items-center gap-3">
@@ -129,15 +137,11 @@ const FormularioProduc = () => {
                             />
                         </div>
 
-                        <button type="submit" className="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Submit</button>
+                        <button type="submit" className="bg-blue-400 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300">Crear</button>
                     </form>
-
-
                 </div>
-
             </div>
         </div>
-
     );
 };
 

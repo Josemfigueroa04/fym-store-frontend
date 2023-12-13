@@ -36,11 +36,11 @@ function AppRoutes() {
 
 
                 <Route path="/" element={<ProtectedRoute element={<Home />} />} />
-                <Route path="/clothes" element={<ProtectedRoute element={<Home />} />} />
-                <Route path="/electronics" element={<ProtectedRoute element={<Home />} />} />
-                <Route path="/furniture" element={<ProtectedRoute element={<Home />} />} />
-                <Route path="/toys" element={<ProtectedRoute element={<Home />} />} />
-                <Route path="/others" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/escritorios" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/electrodomesticos" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/terrazas" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/juguetes" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/muebles" element={<ProtectedRoute element={<Home />} />} />
 
 
                 <Route path="/my-order" element={<ProtectedRoute element={<MyOrder />} />} />
