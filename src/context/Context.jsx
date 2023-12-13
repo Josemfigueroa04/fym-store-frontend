@@ -1,7 +1,8 @@
 import { createContext } from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { set } from "react-hook-form";
+
+import { toast } from "react-toastify";
 
 export const ShoppingCartContext = createContext();
 
@@ -123,13 +124,14 @@ export const ShoppingCartProvider = ({ children }) => {
   };
 
   const logout = async e => {
-    e.preventDefault();
+
     try {
       localStorage.removeItem("token");
       setAuth(false);
       toast.success("Logout successfully");
     } catch (err) {
       console.error(err.message);
+      toast.error(err.message);
     }
   };
 
@@ -208,8 +210,6 @@ const [products, setProducts] = useState([]);
                 updateProduct,
                 products,
                 setProducts,
-                
-
             }
         }>
             {children}

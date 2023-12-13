@@ -70,12 +70,14 @@ function Navbar() {
                 </li>
                 
                 <li>
-                    <NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}>
+                    {localStorage.getItem('token') ? (<NavLink to="/landing"><button onClick={()=> context.logout()}> Cerrar Sesion</button></NavLink>) : (<NavLink to="/sign-in" className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Iniciar Sesion
-                    </NavLink>
+                    </NavLink>)}
+
 
                 </li>
                 <li>
+                    
                     <NavLink to="/register" className={({ isActive }) => isActive ? activeStyle : undefined}>
                         Registrarse
                     </NavLink>

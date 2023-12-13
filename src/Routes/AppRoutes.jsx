@@ -12,6 +12,7 @@ import { ShoppingCartContext } from '../context/Context.jsx';
 import Admin from '../pages/Admin/Admin.jsx';
 import Register from '../pages/Register/Register.jsx';
 import Edit from '../pages/Edit/Edit.jsx';
+import Compra from '../pages/Compra/Compra.jsx';
 
 
 function ProtectedRoute({ element }) {
@@ -41,6 +42,7 @@ function AppRoutes() {
                 <Route path="/terrazas" element={<ProtectedRoute element={<Home />} />} />
                 <Route path="/juguetes" element={<ProtectedRoute element={<Home />} />} />
                 <Route path="/muebles" element={<ProtectedRoute element={<Home />} />} />
+                <Route path="/compra" element={<ProtectedRoute element={<Compra />} />} />
 
 
                 <Route path="/my-order" element={<ProtectedRoute element={<MyOrder />} />} />

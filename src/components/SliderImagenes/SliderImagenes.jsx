@@ -32,7 +32,7 @@ const images = [
 ];
 
 return (
-    <div style={{width:"50vw",  margin:'auto'}}>
+    <div style={{width:"30vw", margin:'auto'}}>
         <ImageGallery  items={images}  
         autoPlay={true}
         showBullets={true}
