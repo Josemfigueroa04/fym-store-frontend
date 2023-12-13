@@ -31,7 +31,7 @@ const ShowProducts = () => {
                                     <td className="border gap-2 ">${new Intl.NumberFormat('es-mx').format(product.price)}</td>
                                     <td className="border">
                                         <Link to={`/edit/${product.id}`} className='bg-yellow-200 rounded gap-2 '> Editar </Link>
-                                        <button type="submit" className="bg-red-500 rounded text-white gap-2 " onClick={() => context.deleteProduct(product.id)}>Eleminar</button>
+                                        <button type="submit" className="bg-red-500 rounded text-white gap-2 " onClick={() => context.deleteProduct(product.id)}>Eliminar</button>
                                     </td>
                                 </tr>
                             ))
